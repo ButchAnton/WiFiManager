@@ -260,6 +260,7 @@ int WiFiManager::connectWifi(String ssid, String pass) {
   }
   //check if we have ssid and pass and force those, if not, try with last saved values
   if (ssid != "") {
+    WiFi.disconnect();
     WiFi.begin(ssid.c_str(), pass.c_str());
   } else {
     if (WiFi.SSID()) {

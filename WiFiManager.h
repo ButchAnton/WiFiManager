@@ -121,6 +121,10 @@ class WiFiManager
     //if this is true, remove duplicated Access Points - defaut true
     void          setRemoveDuplicateAPs(boolean removeDuplicates);
 
+    // helpers
+
+    String        toStringIp(IPAddress ip);
+
   private:
     std::unique_ptr<DNSServer>        dnsServer;
 #ifdef ESP8266
@@ -183,7 +187,7 @@ class WiFiManager
     //helpers
     int           getRSSIasQuality(int RSSI);
     boolean       isIp(String str);
-    String        toStringIp(IPAddress ip);
+    // String        toStringIp(IPAddress ip);
 
     boolean       connect;
     boolean       _debug = true;
